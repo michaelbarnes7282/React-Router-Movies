@@ -16,14 +16,15 @@ const App = () => {
     <div>
       <SavedList list={savedList} />
 
-        <Route path="/">
-          <MovieList />
-        </Route>
-
-        <Route path={"/movies/:id"}>
+      <Switch>
+      <Route path={"/movies/:id"}>
           <Movie />
         </Route>
 
+        <Route path exact="/">
+          <MovieList />
+        </Route>
+      </Switch>
     </div>
   );
 };
